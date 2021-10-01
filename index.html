@@ -1,0 +1,121 @@
+<html>
+
+<style>
+    
+
+html,
+body {
+    background-color: rgb(36, 28, 143);
+    height: 100%;
+}
+.imagebg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-filter: blur(3px);
+  filter: blur(3px);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.form-container
+{
+    background-color: #fff;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 20px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+    border-radius: 8px; 
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+</style>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SpellChecker Form HTML Template - reusable form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    <style>
+        .center {
+margin: auto;
+
+width: 50%;
+padding-left: 150px;
+
+border-style:solid;
+}
+
+.btn
+{
+     background-color: #e38d13;
+}
+    </style>
+    
+    
+<body>
+    <br>
+        <form id="myForm" onsubmit="sendText(spellText)" >
+            <div class="center">
+                <br>
+                <b>Enter your text below:</b>
+                <br>
+            <textarea name="spellText" id="text" cols="30" rows="10"></textarea>
+            <br><br>
+           <input class="btn" type="submit">              
+            <br><br><br>
+          
+          <div id="suggestions">
+          </div>
+        </div>
+        </form>
+          
+    </body>
+    <script>
+
+        var form = document.getElementById("myForm");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
+
+        function sendText(text){
+            document.getElementById("suggestions").innerHTML = "";
+            var value = document.getElementById("text").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "http://localhost:8080/check?spellText="+value, false);            
+            xhttp.send();
+            console.log(xhttp.responseText);
+            var response = JSON.parse(xhttp.responseText);
+            document.getElementById("text").value = response.phrase;
+            var suggestionsLength =  response.suggestions.length;
+
+            if(suggestionsLength > 0){
+                document.getElementById("suggestions").innerHTML += "<p>This words are misspelled:<br>";
+
+                for(var y = 0; y<suggestionsLength; y++){
+                    document.getElementById("suggestions").innerHTML += response.suggestions[y].word+"<br>";
+                }
+
+                document.getElementById("suggestions").innerHTML += "<br> This are the suggestions: <br>";
+                for(var z = 0; z<suggestionsLength; z++){
+                    document.getElementById("suggestions").innerHTML += response.suggestions[z].word+ ": "+response.suggestions[z].suggestions+"<br>";
+                }
+
+                document.getElementById("suggestions").innerHTML += "</p>";
+            } else {
+                document.getElementById("suggestions").innerHTML = "<p>There are no individual incorrect words in the phrase</p>"
+            }
+            
+            
+        }
+        
+    </script>
+</html>
