@@ -1,38 +1,4 @@
 <html>
-
-<style>
-    
-
-html,
-body {
-    background-color: rgb(36, 28, 143);
-    height: 100%;
-}
-.imagebg {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-filter: blur(3px);
-  filter: blur(3px);
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-}
-.form-container
-{
-    background-color: #fff;
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 20px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
-    border-radius: 8px; 
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-
-</style>
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,37 +12,135 @@ body {
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
     <style>
-        .center {
-margin: auto;
-
+        
+		
+.Left {
 width: 50%;
-padding-left: 150px;
+height:50%;
 
-border-style:solid;
+float:left;
+align-items: center;
 }
 
-.btn
-{
-     background-color: #e38d13;
+#output {
+display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112%;
+    height: 75%;
+    border-style: solid;
+    background-color: white;
+    /* margin-block-start: initial; */
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+	margin-left:50px;
+
 }
-    </style>
+
+#output1 {
+    width: 10%;
+    height: 5%;
+    border-style: solid;
+    background-color: white;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+	margin-left:50px;
+
+}
+
+#suggestions {
+	background-color: white;
+    width: 36%;
+    border-style: solid;
+    float: right;
+    height: 94%;
+
+}
+
+.button {
+    margin-left:50px;
+    font-family: Georgia, serif;
+    background-color: #e7f06d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    width: 175px;
+	height: 50px;
+	border-radius: 8px;
+	background-color: #e7f06d;
+    color: black;
+    border: 2px solid White;
+    font-weight: bold;
+}
+
+#buttonPosition {
+   margin-left:100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-image: url("D:\Image.jpeg");
+}
+
+#header {
+	margin-left:100px;
+	font-family: Georgia, serif;
+    padding: 3px;
+    text-align: center;
+    color: #e7f06d;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -20px 0px -2px 0px;
+	font-weight: bold;
+	style="border:solid 1px black;
+	text-shadow: 2px 2px;
+	
+	
+}
+</style>
     
     
 <body>
     <br>
-        <form id="myForm" onsubmit="sendText(spellText)" >
-            <div class="center">
-                <br>
-                <b>Enter your text below:</b>
-                <br>
-            <textarea name="spellText" id="text" cols="30" rows="10"></textarea>
-            <br><br>
-           <input class="btn" type="submit">              
-            <br><br><br>
-          
-          <div id="suggestions">
-          </div>
+        <form id="myForm" onsubmit="sendText(spellText)">
+        <div class="Left">
+		
+		    <div id="header">	
+            <h1>SPELL CHECKER</h1>
+            </div>	
+		
+		
+			<div id="input">	
+            <textarea name="spellText" id="text" cols="95" rows="12" style="border:solid 2px Black; margin-left:50px;"></textarea>
+            </div>	
+			
+			<div id="buttonPosition">
+				<input class="button" type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;
+				<input class="button" type="submit" value="Clear">  				
+			</div>
+		         
+
+			<div id="output">
+			
+			</div>
+			 
         </div>
+
+	    <div id="suggestions">
+            
+        </div>
+		
         </form>
           
     </body>
