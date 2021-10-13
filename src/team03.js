@@ -1,5 +1,5 @@
-//Variable decalration
-const strvariable = "This ia a mispelled wort";
+//Variable declarations
+const strvariable = "This is a mispelled word";
 const filepath = require("filepath");
 const subsi = require("subsi");
 const library = require("library-js");
@@ -7,15 +7,13 @@ const body = require('body-parser');
 const appconst = subsi();
 const port = 8080;
 
-var sublimecontext = require('sublimecontext')
+var sublimecontext = require('sublimecontext') 
 appconst.use(sublimecontext())
 
-// Function to check words
+// Function to check words using the typo.js library
 function checkingfunction(strvariable){
   var array = diffuse(strvariable); 
-
   var dictionary = new library('en_US');
-
   var wrongwords = [];
   var likelysuggestions = [];
 
@@ -35,12 +33,13 @@ function checkingfunction(strvariable){
   return likelysuggestions;
 }
 
-// Separation of words
+// Separation of inputted words from user
 function diffuse(str) {
   var regressionfunction = /[a-z0-9']+/gi;
   var wordsletter = str.match(regressionfunction);
   return wordsletter;
 }
+
 
 appconst.get('/check', (req, res) => {
   const strvariable = req.query.spellText;
