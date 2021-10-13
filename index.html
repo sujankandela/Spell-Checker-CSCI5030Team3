@@ -22,20 +22,20 @@ float:left;
 align-items: center;
 }
 
-#output {
-display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 112%;
-    height: 75%;
-    border-style: solid;
-    background-color: white;
-    /* margin-block-start: initial; */
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-	margin-left:50px;
+<!-- #output { -->
+<!-- display: flex; -->
+    <!-- align-items: center; -->
+    <!-- justify-content: center; -->
+    <!-- width: 112%; -->
+    <!-- height: 75%; -->
+    <!-- border-style: solid; -->
+    <!-- background-color: white; -->
+    <!-- /* margin-block-start: initial; */ -->
+    <!-- padding: 0px 0px 0px 0px; -->
+    <!-- margin: 0px 0px 0px 0px; -->
+	<!-- margin-left:50px; -->
 
-}
+<!-- } -->
 
 #output1 {
     width: 10%;
@@ -49,19 +49,82 @@ display: flex;
 }
 
 #suggestions {
-	background-color: white;
+	background-color: #d2e5ff;
     width: 36%;
     border-style: solid;
     float: right;
     height: 94%;
-
+     overflow-x: hidden;
+  overflow-y: auto;
 }
 
+
+
+element.style {
+}
+
+#suggestionsbox {
+    height: 40px;
+    background-color: #4982cf;
+    color: black;
+    border: 2px solid White;
+    font-weight: bold;
+    font-family: Georgia, serif;
+	font-size: 20px;
+}
+
+<!-- #suggestionswords{ -->
+    <!-- width: 60%; -->
+    <!-- height:100px; -->
+    <!-- border: 15px solid green; -->
+    <!-- /* padding: 50px; */ -->
+    <!-- /* margin: 20px; */ -->
+    <!-- background-color: red; -->
+    <!-- color: black; -->
+    <!-- border: 2px solid White; -->
+    <!-- font-weight: bold; -->
+    <!-- font-family: Georgia, serif; -->
+	<!-- font-size: 20px; -->
+<!-- } -->
+
+
+element.style {
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+<!-- .button { -->
+    <!-- margin-left: 50px; -->
+    <!-- font-family: Georgia, serif; -->
+    <!-- background-color: #e7f06d; -->
+    <!-- border: none; -->
+    <!-- color: white; -->
+    <!-- padding: 12px 32px; -->
+    <!-- text-align: center; -->
+    <!-- text-decoration: none; -->
+    <!-- display: inline-block; -->
+    <!-- font-size: 22px; -->
+    <!-- margin: 4px 2px; -->
+    <!-- cursor: pointer; -->
+    <!-- box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%); -->
+    <!-- width: 175px; -->
+    <!-- height: 50px; -->
+    <!-- border-radius: 8px; -->
+    <!-- background-color: #e7f06d; -->
+    <!-- color: black; -->
+    <!-- border: 2px solid White; -->
+    <!-- font-weight: bold; -->
+<!-- } -->
+
+
 .button {
+    display: block;
     margin-left:50px;
     font-family: Georgia, serif;
-    background-color: #e7f06d;
-    border: none;
+    background-color: #0c0b0b;
+    border: 0;
+    font-size: 16px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -73,11 +136,12 @@ display: flex;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     width: 175px;
 	height: 50px;
-	border-radius: 8px;
-	background-color: #e7f06d;
-    color: black;
-    border: 2px solid White;
+	border-radius: 30px;
+	background-color: #4982cf;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(2, 2, 2);
     font-weight: bold;
+    transition: all 0.3s linear;
 }
 
 #buttonPosition {
@@ -88,16 +152,17 @@ display: flex;
 }
 
 body {
-  background-image: url("D:\Image.jpeg");
+  <!-- background-image: url("D:\Image.jpeg"); -->
+  background-color: #1c87c9;
 }
 
-#header {
+#header{
 	margin-left:100px;
 	font-family: Georgia, serif;
     padding: 3px;
     text-align: center;
-    color: #e7f06d;
-    font-size: 20px;
+    color: #4982cf;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,33 +173,35 @@ body {
 	
 	
 }
+
+.h1, h1 {
+    font-size: 45px;
+}
 </style>
     
     
-<body>
+<body style="background-color:#2c394b;">
     <br>
         <form id="myForm" onsubmit="sendText(spellText)">
         <div class="Left">
 		
 		    <div id="header">	
-            <h1>SPELL CHECKER</h1>
+            <h1>TEAM 3 : SPELL CHECKER</h1>
             </div>	
 		
 		
-			<div id="input">	
-            <textarea name="spellText" id="text" cols="95" rows="12" style="border:solid 2px Black; margin-left:50px;"></textarea>
+			<div id="input" >
+<br></br>			
+            <textarea name="spellText" id="text" cols="95" rows="18" placeholder="Enter The Text" style="border:solid 2px Black; margin-left:50px; background-color:#d2e5ff;font-family:Georgia,serif;font-size:15px;"></textarea>
             </div>	
 			
 			<div id="buttonPosition">
+			    <br></br>
+				<br></br>
+				<br></br>
 				<input class="button" type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;
 				<input class="button" type="submit" value="Clear" onclick="clearfunction()">  				
-			</div>
-		         
-
-			<div id="output">
-			
-			</div>
-			 
+			</div>			 
         </div>
 
 	    <div id="suggestions">
@@ -153,6 +220,8 @@ body {
         function sendText(text){
             document.getElementById("suggestions").innerHTML = "";
             var value = document.getElementById("text").value;
+			if(value!="")
+			{
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "http://localhost:8080/check?spellText="+value, false);            
             xhttp.send();
@@ -162,13 +231,7 @@ body {
             var suggestionsLength =  response.suggestions.length;
 
             if(suggestionsLength > 0){
-                document.getElementById("suggestions").innerHTML += "<p>This words are misspelled:<br>";
-
-                for(var y = 0; y<suggestionsLength; y++){
-                    document.getElementById("suggestions").innerHTML += response.suggestions[y].word+"<br>";
-                }
-
-                document.getElementById("suggestions").innerHTML += "<br> This are the suggestions: <br>";
+                document.getElementById("suggestions").innerHTML += "<div id=suggestionsbox>Suggestions:</div><br>";
                 for(var z = 0; z<suggestionsLength; z++){
                     document.getElementById("suggestions").innerHTML += response.suggestions[z].word+ ": "+response.suggestions[z].suggestions+"<br>";
                 }
@@ -177,6 +240,11 @@ body {
             } else {
                 document.getElementById("suggestions").innerHTML = "<p>There are no individual incorrect words in the phrase</p>"
             }
+			}
+			else
+			{
+			 alert("Please enter some text");
+			}
             
             
         }
