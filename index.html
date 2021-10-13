@@ -65,7 +65,7 @@ element.style {
 
 #suggestionsbox {
     height: 40px;
-    background-color: #e7f06d;
+    background-color: #4982cf;
     color: black;
     border: 2px solid White;
     font-weight: bold;
@@ -192,7 +192,7 @@ body {
 		
 			<div id="input" >
 <br></br>			
-            <textarea name="spellText" id="text" cols="95" rows="18" placeholder="Enter The Text" style="border:solid 2px Black; margin-left:50px; background-color: #d2e5ff;"></textarea>
+            <textarea name="spellText" id="text" cols="95" rows="18" placeholder="Enter The Text" style="border:solid 2px Black; margin-left:50px; background-color:#d2e5ff;font-family:Georgia,serif;font-size:15px;"></textarea>
             </div>	
 			
 			<div id="buttonPosition">
@@ -231,7 +231,7 @@ body {
             var suggestionsLength =  response.suggestions.length;
 
             if(suggestionsLength > 0){
-                document.getElementById("suggestions").innerHTML += "<div id=suggestionsbox>Suggestions:</div>";
+                document.getElementById("suggestions").innerHTML += "<div id=suggestionsbox>Suggestions:</div><br>";
                 for(var z = 0; z<suggestionsLength; z++){
                     document.getElementById("suggestions").innerHTML += response.suggestions[z].word+ ": "+response.suggestions[z].suggestions+"<br>";
                 }
