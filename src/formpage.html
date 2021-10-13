@@ -53,15 +53,17 @@ display: flex;
     width: 36%;
     border-style: solid;
     float: right;
-    height: 94%;
+    height: 90%;
 
 }
 
 .button {
+    display: block;
     margin-left:50px;
     font-family: Georgia, serif;
-    background-color: #e7f06d;
-    border: none;
+    background-color: #0c0b0b;
+    border: 0;
+    font-size: 16px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -73,11 +75,12 @@ display: flex;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     width: 175px;
 	height: 50px;
-	border-radius: 8px;
-	background-color: #e7f06d;
+	border-radius: 30px;
+	background-color: #2bacc373;
     color: black;
-    border: 2px solid White;
+    border: 2px solid rgb(2, 2, 2);
     font-weight: bold;
+	transition: all 0.3s liner;
 }
 
 #buttonPosition {
@@ -121,8 +124,9 @@ body {
             </div>	
 		
 		
-			<div id="input">	
-            <textarea name="spellText" id="text" cols="95" rows="12" style="border:solid 2px Black; margin-left:50px;"></textarea>
+			<div id="input">
+				<lable>Input:</lable>
+            <textarea name="spellText" id="text" cols="95" rows="12" placeholder="Enter The Text" style="border:solid 2px Black; margin-left:50px;" required></textarea>
             </div>	
 			
 			<div id="buttonPosition">
@@ -136,8 +140,11 @@ body {
 			</div>
 			 
         </div>
-
+<br>
+		<br>
+		
 	    <div id="suggestions">
+		    <lable>Suggestions:</lable>
             
         </div>
 		
