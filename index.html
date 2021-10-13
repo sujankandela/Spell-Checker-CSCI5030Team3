@@ -54,8 +54,8 @@ align-items: center;
     border-style: solid;
     float: right;
     height: 94%;
-     overflow-x: hidden;
-  overflow-y: auto;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 
@@ -71,6 +71,19 @@ element.style {
     font-weight: bold;
     font-family: Georgia, serif;
 	font-size: 20px;
+	overflow-x: hidden;
+    overflow-y: auto;
+	width:100%;	
+}
+
+#wordlist{
+width:100%;	
+    height: 30px;
+    background-color: #f45e8f;
+    border: 2px solid White;
+    font-family: Georgia, serif;
+	font-size: 20px;
+	scroll-direction: horizontal;
 }
 
 <!-- #suggestionswords{ -->
@@ -233,12 +246,10 @@ body {
             if(suggestionsLength > 0){
                 document.getElementById("suggestions").innerHTML += "<div id=suggestionsbox>Suggestions:</div><br>";
                 for(var z = 0; z<suggestionsLength; z++){
-                    document.getElementById("suggestions").innerHTML += response.suggestions[z].word+ ": "+response.suggestions[z].suggestions+"<br>";
+                    document.getElementById("suggestions").innerHTML += "<div id=wordlist <b>"+ response.suggestions[z].word +" </b>&nbsp;:"+response.suggestions[z].suggestions+"<br></div>";
                 }
-
-                document.getElementById("suggestions").innerHTML += "</p>";
             } else {
-                document.getElementById("suggestions").innerHTML = "<p>There are no individual incorrect words in the phrase</p>"
+                document.getElementById("suggestions").innerHTML = "<p>No incorrect words</p>"
             }
 			}
 			else
