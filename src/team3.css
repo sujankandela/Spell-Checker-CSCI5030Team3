@@ -32,15 +32,18 @@ align-items: center;
         width: 42%;  
     }
 
-#suggestions {
-	background-color: #d2e5ff;
-    width: 36%;
-    border-style: solid;
-    float: right;
-    height: 94%;
-    overflow-x: auto;
-    overflow-y: auto;
-}
+
+#sentence{
+        color: white;
+        font-weight: bold;
+        font-family: Georgia, serif;
+        font-size: 19px;
+        width: 70%;
+        padding: 0px 0px 0px 88px;
+        margin: 0px 0px 0px -36px;
+    }
+
+
 
 element.style {
 }
