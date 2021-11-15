@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>TEAM 03 SPELL CHECKER</title>
+<link rel="stylesheet" href="C:\Users\sujan\OneDrive\Desktop\Final\Frontpage.css">
+</head>
+<body>
+  <div class="header">
+    <h1>* Welcome to Team03 SpellChecker *</h1>
+  </div>  
+<div id="container">
+<form id="form" method="GET" action="Team03.html">
+  <div class="paragraph">
+  <p><b>Please select a Language:</b></p></div>
+  <br>
+    <select class="mySelect"name="language" id="language">
+        <option value="English">English</option>
+        <option value="Irish">Irish</option>
+      </select>
+      <br><br>
+<button type="button" onclick="submitForm()">Submit</button>
+</form>
+</div> 
+<script>
+function submitForm(){
+    if(typeof(localStorage) != "undefined"){
+        localStorage.name = document.getElementById("language").value;
+    }
+    document.getElementById("form").submit();
+}
+</script>
+</body>
+</html>
