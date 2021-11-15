@@ -24,17 +24,13 @@ align-items: center;
         margin-bottom: -20px;
     }
 
-
-#output1 {
-    width: 10%;
-    height: 5%;
-    border-style: solid;
-    background-color: white;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-	margin-left:50px;
-
-}
+#suggestionsbox {
+        color: white;
+        font-weight: bold;
+        font-family: Georgia, serif;
+        font-size: 19px;
+        width: 42%;  
+    }
 
 #suggestions {
 	background-color: #d2e5ff;
