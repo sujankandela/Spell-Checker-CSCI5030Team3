@@ -13,20 +13,17 @@ align-items: center;
         margin: -41px 0px -36px -3px;
 }
 
-<!-- #output { -->
-<!-- display: flex; -->
-    <!-- align-items: center; -->
-    <!-- justify-content: center; -->
-    <!-- width: 112%; -->
-    <!-- height: 75%; -->
-    <!-- border-style: solid; -->
-    <!-- background-color: white; -->
-    <!-- /* margin-block-start: initial; */ -->
-    <!-- padding: 0px 0px 0px 0px; -->
-    <!-- margin: 0px 0px 0px 0px; -->
-	<!-- margin-left:50px; -->
+#suggestions {
+        background-color:#c4dbdb;
+        width: 100%;
+        border-style: solid;
+        float: right;
+        height: 96%;
+        overflow-x: auto;
+        overflow-y: auto;
+        margin-bottom: -20px;
+    }
 
-<!-- } -->
 
 #output1 {
     width: 10%;
