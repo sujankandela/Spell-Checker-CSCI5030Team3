@@ -13,3 +13,11 @@ f = open("frequent_18000.txt","w")
 for k,v in vocab.most_common(18000):
     f.write("{}:{}\n".format(k,v))
 f.close()
+
+#reading from the frequency file to create a term list
+file = open("frequent_18000.txt")
+term_list = {}
+for line in file:
+    key, value = line.split()
+    term_list[key] = value
+    
