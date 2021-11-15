@@ -93,6 +93,17 @@
 	    function backfunction() {
         location.replace("Frontpage.html");
     }
+	     function setData() {
+        if (typeof (localStorage) != "undefined") {
+            if (localStorage.name == "English") {
+                document.getElementById("sentence").innerHTML = "Please enter your text";
+                document.getElementById("sentence1").innerHTML = "Output";
+                document.getElementById("suggestionsbox").innerHTML = "Result";
+                Check.innerHTML = "Check";
+                Clear.innerHTML = "Clear";
+                Confirm.innerHTML = "Confirm";
+                Back.innerHTML = "Back";
+            }
 	   
     </script>
 </html>
