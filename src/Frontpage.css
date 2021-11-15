@@ -1,0 +1,96 @@
+label,
+footer {
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+
+footer {
+    font-size: .8rem;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.output {
+    background: center/cover no-repeat url('/media/cc0-images/hamster.jpg');
+    position: relative;
+}
+
+#container
+{
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    background-color: #668484;
+    position: fixed;    
+    width: 30%;
+    height: 30%;
+}
+
+select.mySelect{
+    background:#184848;
+    color: #fff;
+    margin: 0px 0px 0px 60px;
+    font-size: 22px;
+    width: 63%;
+    text-align: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* align-self: center; */
+}
+select.mySelect option{
+	color: #000;
+    padding: 0 10px;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    background:#184848;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px double black;
+    color: #eeeeee;
+    text-align: center;
+    margin: 0px 0px 0px 60px;
+    font-size: 22px;
+    width: 63%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  div.paragraph {
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 19px;
+  }
+  body {
+    /* Background pattern from Toptal Subtle Patterns */
+    height: 100%;
+    width: 100%;
+    background-image: url("R.jfif");
+ }
+
+ .header {
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  
