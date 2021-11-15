@@ -4,9 +4,13 @@
 .Left {
 width: 50%;
 height:50%;
-
 float:left;
 align-items: center;
+}
+
+#input {
+	 padding: 0px 0px 0px 0px;
+        margin: -41px 0px -36px -3px;
 }
 
 <!-- #output { -->
