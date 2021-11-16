@@ -117,7 +117,9 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 
 
 .button {
-    display: block;
+    display:inline-block;
+	background:#184848;
+	color:#fff;
     margin-left:50px;
     font-family: Georgia, serif;
     background-color: #0c0b0b;
