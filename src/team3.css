@@ -154,23 +154,12 @@ body {
   background-color: #1c87c9;
 }
 
-#header{
-	margin-left:100px;
-	font-family: Georgia, serif;
-    padding: 3px;
-    text-align: center;
-    color: #4982cf;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: -20px 0px -2px 0px;
-	font-weight: bold;
-	style="border:solid 1px black;
-	text-shadow: 2px 2px;
-	
-	
-}
+    #buttonPosition {
+      margin-left:20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
 body {
     /* Background pattern from Toptal Subtle Patterns */
