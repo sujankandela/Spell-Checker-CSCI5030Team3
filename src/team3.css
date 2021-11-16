@@ -1,4 +1,4 @@
-    <style>
+    
         
 		
 .Left {
@@ -172,7 +172,10 @@ body {
 	
 }
 
-.h1, h1 {
-    font-size: 45px;
+body {
+    /* Background pattern from Toptal Subtle Patterns */
+        height: 100%;
+        width: 100%;
+        background-image: url("R.jfif");
 }
-</style>
+
