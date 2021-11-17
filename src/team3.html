@@ -93,6 +93,32 @@
 	    function backfunction() {
         location.replace("Frontpage.html");
     }
+	 
+	    function sendData() {
+		var ifinputempty = document.getElementById("Input").value;
+		if(ifinputempty !="")
+		{
+			//document.getElementById("Output").value = "";
+			var selectedText = document.getElementById("Input").value;
+			tempvariable = selectedText;
+			alert(tempvariable);
+
+			$.ajax({
+				url: '/',
+				type: 'POST',
+				data: { 'word': selectedText },
+			})
+				.done(function (data) {
+					Output.textContent = data;
+				});
+		}
+		else
+		{
+			alert("Please enter some text in Input");
+		}
+	}
+	    
+	    
 	    
 	   
     </script>
