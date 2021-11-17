@@ -1,15 +1,19 @@
 from collections import Counter
 import nltk;
 from nltk.tokenize import word_tokenize
-import os
 import re
+from textblob import TextBlob
 
-file = open("frequent_english_3000.txt")
+file = open("frequent_english_3500.txt")
 term_list = {}
 for line in file:
     key, value = line.split()
     term_list[key] = value
-
+    
+def detect_language(text):
+    text_language = TextBlob(text)
+    language = text_language.detect_language()
+    return language
     
 def edit_distance1(word):
     suggestions = []
@@ -31,6 +35,7 @@ def edit_distance2(word):
    
 def spellCheck(text):
     words = text.split()
+    language = detect_language(text)
     for i in words:
         if i not in term_list:
             word_length = len(i)
