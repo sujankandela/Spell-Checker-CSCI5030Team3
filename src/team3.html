@@ -1,54 +1,61 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SpellChecker Form HTML Template - reusable form</title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    </head>
-        
-<body style="background-color:#e8ebf0;"onload="setData()">
-    <br>
-        <form id="myForm">
-		<div class="Left">
-			<div id="input">	
-				<br></br>
-			<div id="sentence">
-			</div>	
-			
-				<textarea name="spellText" id="text" cols="85" rows="10" placeholder="" style="border:solid 2px Black; margin-left:50px; background-color:#d2e5ff;font-family:Georgia,serif;font-size:15px;"></textarea>
-			</div>	
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="static/css/Team03.css">
+</head>
+
+<body onload="setData()" style="background-image: url('static/image/R.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+	height:100%;
+	width:100%;">
+	<div class="Left">
+		<form role="form" method="POST" id="myForm">
+			<div class="row">
+				<label for="Input" id="sent" class="font"></label>
+				<form method="POST">
+					<textarea type="textarea" name="takeinput" id="Input" placeholder="" cols="85" rows="10" required
+						style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:15px;"></textarea>
+				</form>
+			</div>
+
+			<div class="row">
+				<label for="Output" id="result" class="font"></label>
+				<textarea type="textarea" name="Output" id="Output" cols="85" rows="10"
+					style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:15px;"></textarea>
+				</div>
 			<div id="buttonPosition">
 				<br></br>
 				<br></br>
-				<br></br>
-			    <button class="button" id="Check"
-                    onclick="sendText(spellText)"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button" id="Clear"
-                    onclick="clearfunction()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button"
-                    id="Confirm"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button" id="Back" onclick="backfunction()"></button>				
-			</div>	
-<div id="input1" >
-	<div id="sentence1">
+				<button class="button" id="Check"
+					onclick="suggestion()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button class="button" id="Clear"
+					onclick="clearfunction()">Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button class="button" id="Confirm"
+					onclick="sendData()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<!-- <button class="button" id="Back" onclick="backfunction()"></button> -->
+				<label for="UI_Language" id="lbldropdown" class="font"></label>
+				<select class="mySelect" name="language" id="UI_Language" onchange="selectLanguage()">
+					<option value="English">English</option>
+					<option value="Irish">Irish</option>
+				</select>&nbsp;&nbsp;&nbsp;
+				<label for="Writing_Language" id="lbldropdown2" class="font"></label>
+				<select class="mySelect" name="language" id="Writing_Language" onchange="setwritinglangauge()">
+					<option value="English">English</option>
+					<option value="Irish">Irish</option>
+				</select>&nbsp;&nbsp;&nbsp;
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		</form>
 	</div>
-				<textarea name="spellText" id="text" cols="85" rows="10" placeholder="" style="border:solid 2px Black; margin-left:50px; background-color:#d2e5ff;font-family:Georgia,serif;font-size:15px;"></textarea>
-            
-			</div>	
-		</div>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div id="Right">
+	<div id="Right">
 		<div class="row">
 			<label for="SuggestionList" id="suggestion" class="font"></label>
 			<textarea type="textarea" name="SuggestionList" id="SuggestionList" cols="45" rows="18"
@@ -56,69 +63,103 @@
 		</div>
 	</div>
 
-
-<select class="mySelect" name="language" id="select1" onchange="selectLanguage()">
-					<option value="English">English</option>
-					<option value="Irish">Irish</option>
-				</select>&nbsp;&nbsp;&nbsp;
-
-
-
-		
-		
-        </form>
 </body>
-    <script>
-        var form = document.getElementById("myForm");
-        function handleForm(event) { event.preventDefault(); } 
-        form.addEventListener('submit', handleForm);
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+	var form = document.getElementById("myForm");
+	function handleForm(event) { event.preventDefault(); }
+	form.addEventListener('submit', handleForm);
 
-        function sendText(text){
-            document.getElementById("suggestions").innerHTML = "";
-            var value = document.getElementById("text").value;
-		if(value!=""){
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "http://localhost:8080/check?spellText="+value, false);            
-			xhttp.send();
-			console.log(xhttp.responseText);
-			var response = JSON.parse(xhttp.responseText);
-			document.getElementById("text").value = response.phrase;
-			var suggestionsLength =  response.suggestions.length;
-			if(suggestionsLength > 0){
-				document.getElementById("suggestions").innerHTML += "<div id=suggestionsbox>Suggestions:</div><br>";
-				for(var z = 0; z<suggestionsLength; z++){
-					document.getElementById("suggestions").innerHTML += "<div id=wordlist <b>"+ response.suggestions[z].word +" </b>&nbsp;:"+response.suggestions[z].suggestions+"<br></div>";
-				}
-			} 
-			else {
-				document.getElementById("suggestions").innerHTML = "<p>No incorrect words</p>"
-			}
-		}
-		else {
-			alert("Please enter some text");
-		}
-        }
-		function clearfunction(){
-			document.getElementById("myForm").reset()
-			document.getElementById("suggestions").innerHTML = "";
-		}  
-	    function backfunction() {
-        location.replace("Frontpage.html");
-    }
-	 
-	    function sendData() {
+	Writing_Language="English";
+
+	function suggestion()
+	{
 		var ifinputempty = document.getElementById("Input").value;
 		if(ifinputempty !="")
 		{
-			//document.getElementById("Output").value = "";
+			//document.getElementById("SuggestionList").value = "";
 			var selectedText = document.getElementById("Input").value;
 			tempvariable = selectedText;
-			alert(tempvariable);
+			langaugetowrite=setwritinglangauge();
 
 			$.ajax({
 				url: '/',
 				type: 'POST',
-				data: { 'word': selectedText },
+				data: { 'word': selectedText, 'language':langaugetowrite },
+			})
+				.done(function (data) {
+					SuggestionList.textContent = data;
+				});
+		}
+		else
+		{
+			alert("Please enter some text in Input");
+		}
+	}
+
+	function clearfunction() {
+		document.getElementById("myForm").reset();
+		document.getElementById("Output").innerHTML="";
+		document.getElementById("SuggestionList").innerHTML="";
+	}
+
+	function backfunction() {
+		location.replace("Frontpage.html");
+	}
+
+	function setData() {
+		document.getElementById("sent").innerHTML = "Please enter your text";
+		document.getElementById("result").innerHTML = "Output";
+		document.getElementById("suggestion").innerHTML = "Suggestions";
+		document.getElementById("Check").innerHTML = "Check";
+		document.getElementById("Clear").innerHTML = "Clear";
+		document.getElementById("Confirm").innerHTML = "Confirm";
+		document.getElementById("lbldropdown").innerHTML = "UI Language";
+		document.getElementById("lbldropdown2").innerHTML = "Writing Language";
+	}
+
+	function selectLanguage() {
+
+		language = "";
+		var language = document.getElementById("UI_Language").value;
+
+		if (language == "English") {
+			document.getElementById("sent").innerHTML = "Enter text";
+			document.getElementById("result").innerHTML = "Output";
+			document.getElementById("suggestion").innerHTML = "Suggestions";
+			document.getElementById("Check").innerHTML = "Check";
+			document.getElementById("Clear").innerHTML = "Clear";
+			document.getElementById("Confirm").innerHTML = "Confirm";
+			document.getElementById("lbldropdown").innerHTML = "UI Language";
+			document.getElementById("lbldropdown2").innerHTML = "Writing Language";
+		}
+		else {
+			document.getElementById("sent").innerHTML = "Cuir isteach téacs";
+			document.getElementById("result").innerHTML = "Aschur";
+			document.getElementById("suggestion").innerHTML = "Toradh";
+			document.getElementById("Check").innerHTML = "Seiceáil";
+			document.getElementById("Clear").innerHTML = "Soiléir";
+			document.getElementById("Confirm").innerHTML = "Deimhnigh";
+			document.getElementById("lbldropdown").innerHTML = "Roghnaigh Teanga";
+			document.getElementById("lbldropdown2").innerHTML = "Scríbhneoireacht Teanga";
+		}
+	}
+
+	function sendData() {
+		var ifinputempty = document.getElementById("Input").value;
+		if(ifinputempty !="")
+		{
+			
+			//document.getElementById("Output").value = "";
+			var selectedText = document.getElementById("Input").value;
+			tempvariable = selectedText;
+			langaugetowrite=setwritinglangauge();
+
+			$.ajax({
+				url: '/',
+				type: 'POST',
+				data: { 'word': selectedText, 'language':langaugetowrite },
 			})
 				.done(function (data) {
 					Output.textContent = data;
@@ -129,9 +170,14 @@
 			alert("Please enter some text in Input");
 		}
 	}
-	    
-	    
-	    
-	   
-    </script>
+
+	function setwritinglangauge()
+	{
+		Writing_Language = document.getElementById("Writing_Language").value;
+		alert(Writing_Language);
+		return Writing_Language;
+	}
+
+</script>
+
 </html>
