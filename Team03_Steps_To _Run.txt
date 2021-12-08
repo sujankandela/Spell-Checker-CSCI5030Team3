@@ -18,3 +18,5 @@ If you are using IDE.
 
 Note: Please put every file in proper folder to run. 
       Design image is present on git in Team03Folder design.
+      
+You will need to create extra folder like static templates on local machine.
