@@ -64,7 +64,11 @@ element.style {
 	font-size: 20px;
 	overflow-x: hidden;
     overflow-y: auto;
-	width:100%;	
+	width:100%;
+	 font-family: Georgia, serif;
+	font-size: 20px;
+	scroll-direction: horizontal;
+	
 }
 
 #wordlist{
@@ -89,6 +93,8 @@ width:100%;
     <!-- font-weight: bold; -->
     <!-- font-family: Georgia, serif; -->
 	<!-- font-size: 20px; -->
+	
+	
 <!-- } -->
 
 
