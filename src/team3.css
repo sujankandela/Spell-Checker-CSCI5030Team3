@@ -9,6 +9,21 @@ float:left;
 align-items: center;
 }
 
+
+#output1 {
+    width: 10%;
+    height: 5%;
+    border-style: solid;
+    background-color: white;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+	margin-left:50px;
+
+}
+
+
+
+
 <!-- #output { -->
 <!-- display: flex; -->
     <!-- align-items: center; -->
@@ -24,16 +39,7 @@ align-items: center;
 
 <!-- } -->
 
-#output1 {
-    width: 10%;
-    height: 5%;
-    border-style: solid;
-    background-color: white;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-	margin-left:50px;
 
-}
 
 #suggestions {
 	background-color: #d2e5ff;
@@ -128,7 +134,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     -o-transition: all 0.5s;
     transition: all 0.5s;
     cursor: pointer;
-    padding: 0px 25px 0px 24px;
+    padding: 0px 20px 0px 24px;
     font-family: Georgia, serif;
    
     
@@ -147,7 +153,7 @@ body {
 }
 
     #buttonPosition {
-      margin-left:20px;
+      margin-left:30px;
       display: flex;
       align-items: center;
       justify-content: center;
