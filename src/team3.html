@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="static/css/Team03.css">
 </head>
 
-<body onload="setData()" style="background-image: url('static/image/R.jfif');
+<body onload="setData()" style="background-image: url('static/image/Team03.jfif');
     background-repeat: no-repeat;
     background-size: cover;
 	height:100%;
@@ -17,26 +17,26 @@
 			<div class="row">
 				<label for="Input" id="sent" class="font"></label>
 				<form method="POST">
-					<textarea type="textarea" name="takeinput" id="Input" placeholder="" cols="85" rows="10" required
+					<textarea type="textarea" name="takeinput" id="Input" placeholder="" cols="85" rows="25" required
 						style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:15px;"></textarea>
 				</form>
 			</div>
 
-			<div class="row">
+			<!--<div class="row">
 				<label for="Output" id="result" class="font"></label>
-				<textarea type="textarea" name="Output" id="Output" cols="85" rows="10"
+				<textarea type="textarea" name="Output" id="Output" cols="85" rows="12"
 					style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:15px;"></textarea>
-				</div>
+				</div>-->
 			<div id="buttonPosition">
 				<br></br>
 				<br></br>
 				<button class="button" id="Check"
-					onclick="suggestion()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					onclick="suggestion()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button class="button" id="Clear"
-					onclick="clearfunction()">Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<button class="button" id="Confirm"
-					onclick="sendData()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<!-- <button class="button" id="Back" onclick="backfunction()"></button> -->
+					onclick="clearfunction()">Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<!--<button class="button" id="Confirm"
+					onclick="sendData()"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+				
 				<label for="UI_Language" id="lbldropdown" class="font"></label>
 				<select class="mySelect" name="language" id="UI_Language" onchange="selectLanguage()">
 					<option value="English">English</option>
@@ -48,13 +48,11 @@
 				<select class="mySelect" name="language" id="Writing_Language" onchange="setwritinglangauge()">
 					<option value="English">English</option>
 					<option value="Irish">Irish</option>
-				</select>&nbsp;&nbsp;&nbsp;
-			</div>			<div id="note">
-			<p>Note **<br>
-			* UI Langauge : Select language in which you want User Interface to display<br>
-			* Writing Langauge : Select language in which you want to write the text for Spell Checking</p>
+					<option value="Spanish">Spanish</option>
+					<option value="Turkish">Turkish</option>
+				</select>&nbsp;&nbsp;&nbsp;				
 			</div>
-				<div id="note">
+			<div id="note">
 			<p>Note **<br>
 			* UI Langauge : Select language in which you want User Interface to display<br>
 			* Writing Langauge : Select language in which you want to write the text for Spell Checking</p>
@@ -69,8 +67,8 @@
 	<div id="Right">
 		<div class="row">
 			<label for="SuggestionList" id="suggestion" class="font"></label>
-			<textarea type="textarea" name="SuggestionList" id="SuggestionList" cols="45" rows="18"
-				style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:15px;color: #fff;"></textarea>
+			<textarea type="textarea" name="SuggestionList" id="SuggestionList" cols="45" rows="18" onclick=fun()
+				style="border:solid 2px Black; margin-left:50px; cursor: text; background-color: #668484;font-family:Georgia,serif;font-size:20px;color: #fff;"></textarea>
 		</div>
 	</div>
 
@@ -88,7 +86,7 @@
 	{
 		var ifinputempty = document.getElementById("Input").value;
 		if(ifinputempty !="")
-		{
+		{			
 			var selectedText = document.getElementById("Input").value;
 			tempvariable = selectedText;
 			langaugetowrite=setwritinglangauge();
@@ -98,10 +96,10 @@
 				type: 'POST',
 				data: { 'word': selectedText, 'language':langaugetowrite },
 			})
-				
-			.done(function (data) {
-			Output.textContent = data;
-			});
+				.done(function (data) {
+					var suggestions = data;
+					SuggestionList.textContent = data;
+				});
 		}
 		else
 		{
@@ -115,23 +113,19 @@
 		document.getElementById("SuggestionList").innerHTML="";
 	}
 
-	function backfunction() {
-		location.replace("Frontpage.html");
-	}
-
 	function setData() {
-		document.getElementById("sent").innerHTML = "Please enter your text";
+		document.getElementById("sent").innerHTML = "Enter text";
 		//document.getElementById("result").innerHTML = "Output";
 		document.getElementById("suggestion").innerHTML = "Suggestions";
 		document.getElementById("Check").innerHTML = "Check";
 		document.getElementById("Clear").innerHTML = "Clear";
-		document.getElementById("Confirm").innerHTML = "Confirm";
+		//document.getElementById("Confirm").innerHTML = "Confirm";
 		document.getElementById("lbldropdown").innerHTML = "UI Language";
 		document.getElementById("lbldropdown2").innerHTML = "Writing Language";
 	}
 
-	function selectLanguage() {
-
+	function selectLanguage() 
+	{
 		language = "";
 		var language = document.getElementById("UI_Language").value;
 
@@ -141,21 +135,22 @@
 			document.getElementById("suggestion").innerHTML = "Suggestions";
 			document.getElementById("Check").innerHTML = "Check";
 			document.getElementById("Clear").innerHTML = "Clear";
-			document.getElementById("Confirm").innerHTML = "Confirm";
+			//document.getElementById("Confirm").innerHTML = "Confirm";
 			document.getElementById("lbldropdown").innerHTML = "UI Language";
 			document.getElementById("lbldropdown2").innerHTML = "Writing Language";
 		}
-		else {
+		else if(language == "Irish")
+		{
 			document.getElementById("sent").innerHTML = "Cuir isteach téacs";
 			//document.getElementById("result").innerHTML = "Aschur";
 			document.getElementById("suggestion").innerHTML = "Toradh";
 			document.getElementById("Check").innerHTML = "Seiceáil";
 			document.getElementById("Clear").innerHTML = "Soiléir";
-			document.getElementById("Confirm").innerHTML = "Deimhnigh";
+			//document.getElementById("Confirm").innerHTML = "Deimhnigh";
 			document.getElementById("lbldropdown").innerHTML = "Roghnaigh Teanga";
 			document.getElementById("lbldropdown2").innerHTML = "Scríbhneoireacht Teanga";
 		}
-				else if(language == "Spanish")
+		else if(language == "Spanish")
 		{
 			document.getElementById("sent").innerHTML = "Introducir texto";
 			//document.getElementById("result").innerHTML = "Salida";
@@ -177,14 +172,14 @@
 			document.getElementById("lbldropdown").innerHTML = "Kullanıcı Arabirimi Dili";
 			document.getElementById("lbldropdown2").innerHTML = "Yazma Dili";
 		}
+
 	}
 
-	function sendData() {
+	/**function sendData()
+	{
 		var ifinputempty = document.getElementById("Input").value;
 		if(ifinputempty !="")
 		{
-			
-			//document.getElementById("Output").value = "";
 			var selectedText = document.getElementById("Input").value;
 			tempvariable = selectedText;
 			langaugetowrite=setwritinglangauge();
@@ -194,17 +189,19 @@
 				type: 'POST',
 				data: { 'word': selectedText, 'language':langaugetowrite },
 			})
+				.done(function (data) {
+					Output.textContent = data;
+				});
 		}
 		else
 		{
 			alert("Please enter some text in Input");
 		}
-	}
-	
+	}**/
 
 	function setwritinglangauge()
 	{
-	       Writing_Language = document.getElementById("Writing_Language").value;
+		Writing_Language = document.getElementById("Writing_Language").value;
 		if(Writing_Language=="English" || Writing_Language=="Irish")
 		{
 		return Writing_Language;
