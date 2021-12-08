@@ -30,11 +30,19 @@ def edit_distance1(word):
     return suggestions
         
 def edit_distance2(word):
-   suggestions = []
-   for key,value in term_list.items():
-       edit = nltk.edit_distance(word, key)
-       if (edit == 1 or edit == 2):
-            suggestions.append(key)
+            print(i)
+            word= i + ":"
+            e=english_word_suggestions(i)
+            print("e")
+            print(e)
+            x= ','.join([str(element) for element in e])
+            print("x")
+            print(x)
+            word=word + x + "\n"
+            suggestions.append(word)
+            # appending suggestion if there are more than a single word 
+            print(suggestions)
+            print("suggestions")
    print("mispelled words are:", word)
    print("possible corrections are:", suggestions)
    return suggestions
