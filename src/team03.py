@@ -73,15 +73,34 @@ def spellCheck(text,languagetowrite): # Main function
     language = languagetowrite
     words = text.split()
     if (language == "English"):
-        for i in words:
+            print(i)
+            word= i + ":"
             e=english_word_suggestions(i)
-            suggestions.append(e) # appending suggestion if there are more than a single word 
-        return suggestions
+            print("e")
+            print(e)
+            x= ','.join([str(element) for element in e])
+            print("x")
+            print(x)
+            word=word + x + "\n"
+            suggestions.append(word)
+            # appending suggestion if there are more than a single word 
+            print(suggestions)
+            print("suggestions")
     else:
         for i in words:
-            e=irish_word_suggestions(i)
-            suggestions.append(e) # appending suggestion if there are more than a single word 
-        return suggestions
+            print(i)
+            word= i + ":"
+            e=english_word_suggestions(i)
+            print("e")
+            print(e)
+            x= ','.join([str(element) for element in e])
+            print("x")
+            print(x)
+            word=word + x + "\n"
+            suggestions.append(word)
+            # appending suggestion if there are more than a single word 
+            print(suggestions)
+            print("suggestions")
 
 @app.route('/', methods=['POST'])
 def check():
