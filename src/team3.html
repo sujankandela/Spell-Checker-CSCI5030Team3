@@ -180,9 +180,15 @@
 
 	function setwritinglangauge()
 	{
-		Writing_Language = document.getElementById("Writing_Language").value;
-		alert(Writing_Language);
+	       Writing_Language = document.getElementById("Writing_Language").value;
+		if(Writing_Language=="English" || Writing_Language=="Irish")
+		{
 		return Writing_Language;
+		}
+		else
+		{
+	    alert("Sorry, Spell Checking is still in process for " + Writing_Language + " langauge !! \nPlease select writing langauge as English or Irish, Thank You!!");
+		}
 	}
 
 </script>
