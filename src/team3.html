@@ -41,6 +41,8 @@
 				<select class="mySelect" name="language" id="UI_Language" onchange="selectLanguage()">
 					<option value="English">English</option>
 					<option value="Irish">Irish</option>
+					<option value="Spanish">Spanish</option>
+					<option value="Turkish">Turkish</option>
 				</select>&nbsp;&nbsp;&nbsp;
 				<label for="Writing_Language" id="lbldropdown2" class="font"></label>
 				<select class="mySelect" name="language" id="Writing_Language" onchange="setwritinglangauge()">
@@ -152,6 +154,28 @@
 			document.getElementById("Confirm").innerHTML = "Deimhnigh";
 			document.getElementById("lbldropdown").innerHTML = "Roghnaigh Teanga";
 			document.getElementById("lbldropdown2").innerHTML = "Scríbhneoireacht Teanga";
+		}
+				else if(language == "Spanish")
+		{
+			document.getElementById("sent").innerHTML = "Introducir texto";
+			//document.getElementById("result").innerHTML = "Salida";
+			document.getElementById("suggestion").innerHTML = "Sugerencias";
+			document.getElementById("Check").innerHTML = "Comprobar";
+			document.getElementById("Clear").innerHTML = "Claro";
+			//document.getElementById("Confirm").innerHTML = "Confirmar";
+			document.getElementById("lbldropdown").innerHTML = "Idioma de la interfaz de usuario";
+			document.getElementById("lbldropdown2").innerHTML = "Lenguaje de escritura";
+		}
+		else if(language == "Turkish")
+		{
+			document.getElementById("sent").innerHTML = "CMetin girme";
+			//document.getElementById("result").innerHTML = "Çıktı";
+			document.getElementById("suggestion").innerHTML = "Öneri";
+			document.getElementById("Check").innerHTML = "Çek";
+			document.getElementById("Clear").innerHTML = "Berrak";
+			//document.getElementById("Confirm").innerHTML = "Onaylamak";
+			document.getElementById("lbldropdown").innerHTML = "Kullanıcı Arabirimi Dili";
+			document.getElementById("lbldropdown2").innerHTML = "Yazma Dili";
 		}
 	}
 
