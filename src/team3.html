@@ -78,7 +78,6 @@
 		var ifinputempty = document.getElementById("Input").value;
 		if(ifinputempty !="")
 		{
-			//document.getElementById("SuggestionList").value = "";
 			var selectedText = document.getElementById("Input").value;
 			tempvariable = selectedText;
 			langaugetowrite=setwritinglangauge();
@@ -88,9 +87,10 @@
 				type: 'POST',
 				data: { 'word': selectedText, 'language':langaugetowrite },
 			})
-				.done(function (data) {
-					SuggestionList.textContent = data;
-				});
+				
+			.done(function (data) {
+			Output.textContent = data;
+			});
 		}
 		else
 		{
@@ -170,6 +170,7 @@
 			alert("Please enter some text in Input");
 		}
 	}
+	
 
 	function setwritinglangauge()
 	{
