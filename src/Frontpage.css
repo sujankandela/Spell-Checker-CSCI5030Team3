@@ -5,7 +5,7 @@ footer {
 
 label {
     font-size: 1rem;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 select {
@@ -14,14 +14,14 @@ select {
 }
 
 footer {
-    font-size: .8rem;
+    font-size: .9rem;
     position: absolute;
     bottom: 30px;
     left: 30px;
 }
 
 .output {
-    background: center/cover no-repeat url('/media/cc0-images/hamster.jpg');
+    background: center/cover no-repeat url('/cc0-images/hamster.jpg');
     position: relative;
 }
 
@@ -35,8 +35,8 @@ footer {
     border: 1px solid white;
     background-color: #668484;
     position: fixed;    
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 40%;
 }
 
 select.mySelect{
